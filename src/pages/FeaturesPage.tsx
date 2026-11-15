@@ -13,19 +13,16 @@ export function FeaturesPage() {
         path="/features"
       />
 
-      <section className="border-b border-neutral-200 bg-white py-16 sm:py-20">
-        <div className="mx-auto max-w-6xl px-6">
-          <p className="text-xs font-medium text-neutral-500">
-            <span>Capabilities</span>
-            <span aria-hidden="true" className="mx-2">
-              ·
-            </span>
-            <span>Accessible via {SITE_CONFIG.telegramHandle}</span>
+      <section className="relative border-b border-[#292B30] bg-hero-glow py-16 sm:py-20">
+        <div className="pointer-events-none absolute inset-0 bg-dot-grid opacity-30" aria-hidden="true" />
+        <div className="relative mx-auto max-w-6xl px-6">
+          <p className="font-mono text-xs font-medium tracking-[0.16em] text-[#C69A52] uppercase">
+            Capabilities · {SITE_CONFIG.telegramHandle}
           </p>
-          <h1 className="mt-3 max-w-3xl font-display text-4xl font-bold tracking-tight text-neutral-950 sm:text-5xl">
+          <h1 className="mt-4 max-w-3xl font-display text-4xl font-bold tracking-tight text-[#F5F5F5] sm:text-5xl">
             Academic Capabilities Built for Real Coursework
           </h1>
-          <p className="mt-5 max-w-2xl text-base leading-relaxed text-neutral-600 sm:text-lg">
+          <p className="mt-5 max-w-2xl text-base leading-relaxed text-[#A4A6AD] sm:text-lg">
             Aqoriel combines nine focused academic workflows inside one Telegram assistant—helping
             students comprehend complex subjects, organize lectures and readings, and prepare
             methodically for examinations.
@@ -33,17 +30,15 @@ export function FeaturesPage() {
 
           <nav
             aria-label="Feature directory"
-            className="mt-10 flex flex-wrap gap-x-6 gap-y-2 border-t border-neutral-200 pt-6 text-sm text-neutral-600"
+            className="mt-10 flex flex-wrap gap-x-6 gap-y-2.5 border-t border-[#292B30] pt-6 text-sm text-[#A4A6AD]"
           >
             {FEATURES_PAGE_CONTENT.map((feature) => (
               <a
                 key={feature.id}
                 href={`#${feature.id}`}
-                className="transition-colors hover:text-neutral-950 whitespace-nowrap"
+                className="transition-colors hover:text-[#C69A52] whitespace-nowrap"
               >
-                <span className="mr-1.5 font-mono text-xs text-neutral-400">
-                  {feature.number}
-                </span>
+                <span className="mr-1.5 font-mono text-xs text-[#8C6638]">{feature.number}</span>
                 <span>{feature.title}</span>
               </a>
             ))}
@@ -51,32 +46,32 @@ export function FeaturesPage() {
         </div>
       </section>
 
-      <section className="bg-neutral-50 py-16 sm:py-20">
-        <div className="mx-auto max-w-6xl space-y-10 px-6">
-          {FEATURES_PAGE_CONTENT.map((feature, index) => (
+      <section className="bg-[#08090B] py-16 sm:py-20">
+        <div className="mx-auto max-w-6xl space-y-8 px-6">
+          {FEATURES_PAGE_CONTENT.map((feature) => (
             <article
               key={feature.id}
               id={feature.id}
-              className="scroll-mt-24 rounded-2xl border border-neutral-200 bg-white p-7 sm:p-10"
+              className="scroll-mt-24 rounded-2xl border border-[#292B30] bg-[#111318] p-7 transition-colors duration-200 hover:border-[#C69A52]/40 sm:p-10"
             >
               <div className="grid grid-cols-1 gap-10 lg:grid-cols-12 lg:items-start">
                 <div className="lg:col-span-6">
-                  <div className="flex items-center gap-3 text-xs text-neutral-500">
-                    <span className="font-mono tabular-nums">{feature.number}</span>
+                  <div className="flex items-center gap-3 text-xs text-[#A4A6AD]">
+                    <span className="font-mono tabular-nums text-[#C69A52]">{feature.number}</span>
                     <span aria-hidden="true">·</span>
                     <span>Capability Overview</span>
                   </div>
 
-                  <div className="mt-4 flex items-center gap-3">
-                    <div className="flex h-10 w-10 items-center justify-center rounded-lg border border-neutral-200 bg-neutral-50 text-neutral-950">
+                  <div className="mt-4 flex items-center gap-3.5">
+                    <div className="flex h-10 w-10 items-center justify-center rounded-lg border border-[#C69A52]/40 bg-[#C69A52]/10 text-[#C69A52]">
                       <FeatureIcon name={feature.iconName} className="h-5 w-5" />
                     </div>
-                    <h2 className="font-display text-2xl font-bold tracking-tight text-neutral-950 sm:text-3xl">
+                    <h2 className="font-display text-2xl font-bold tracking-tight text-[#F5F5F5] sm:text-3xl">
                       {feature.title}
                     </h2>
                   </div>
 
-                  <p className="mt-4 text-base leading-relaxed text-neutral-600">
+                  <p className="mt-4 text-base leading-relaxed text-[#A4A6AD]">
                     {feature.explanation}
                   </p>
 
@@ -84,10 +79,10 @@ export function FeaturesPage() {
                     {feature.benefits.map((benefit) => (
                       <li
                         key={benefit}
-                        className="flex items-start gap-2.5 text-sm text-neutral-700"
+                        className="flex items-start gap-2.5 text-sm text-[#F5F5F5]/90"
                       >
                         <Check
-                          className="mt-0.5 h-4 w-4 shrink-0 text-neutral-950"
+                          className="mt-0.5 h-4 w-4 shrink-0 text-[#C69A52]"
                           aria-hidden="true"
                         />
                         <span>{benefit}</span>
@@ -100,7 +95,7 @@ export function FeaturesPage() {
                       href={SITE_CONFIG.telegramUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex min-h-[44px] items-center gap-2 rounded-lg bg-neutral-950 px-5 py-2.5 text-sm font-medium text-white transition-colors duration-150 hover:bg-neutral-800 whitespace-nowrap"
+                      className="inline-flex min-h-[44px] items-center gap-2 rounded-lg border border-[#C69A52]/70 bg-[#C69A52]/15 px-5 py-2.5 text-sm font-medium text-[#F5F5F5] transition-colors duration-150 hover:bg-[#C69A52] hover:text-[#08090B] whitespace-nowrap"
                     >
                       <TelegramIcon className="h-4 w-4" />
                       <span>Use {feature.title} on Telegram</span>
@@ -109,59 +104,25 @@ export function FeaturesPage() {
                   </div>
                 </div>
 
-                {/* Product Preview Panel */}
+                {/* Dark Product Preview Panel */}
                 <div className="lg:col-span-6">
-                  <div
-                    className={`rounded-xl border p-6 ${
-                      index % 2 === 1
-                        ? 'border-neutral-800 bg-neutral-950 text-white'
-                        : 'border-neutral-200 bg-neutral-50 text-neutral-950'
-                    }`}
-                  >
-                    <div
-                      className={`flex items-center justify-between border-b pb-3 text-xs ${
-                        index % 2 === 1
-                          ? 'border-neutral-800 text-neutral-400'
-                          : 'border-neutral-200 text-neutral-500'
-                      }`}
-                    >
+                  <div className="rounded-xl border border-[#292B30] bg-[#17191F] p-6">
+                    <div className="flex items-center justify-between border-b border-[#292B30] pb-3 text-xs text-[#A4A6AD]">
                       <span>{feature.previewLabel}</span>
-                      <span className="font-mono">{SITE_CONFIG.telegramHandle}</span>
+                      <span className="font-mono text-[#C69A52]">{SITE_CONFIG.telegramHandle}</span>
                     </div>
 
                     <div className="mt-4 space-y-4">
-                      <div
-                        className={`rounded-lg px-4 py-3 text-sm ${
-                          index % 2 === 1
-                            ? 'bg-neutral-900 text-neutral-200'
-                            : 'bg-neutral-950 text-white'
-                        }`}
-                      >
-                        <p
-                          className={`text-xs ${
-                            index % 2 === 1 ? 'text-neutral-400' : 'text-neutral-300'
-                          }`}
-                        >
-                          Student Request
-                        </p>
+                      <div className="rounded-lg border border-[#292B30] bg-[#08090B] px-4 py-3 text-sm text-[#F5F5F5]">
+                        <p className="text-xs text-[#A4A6AD]">Student Request</p>
                         <p className="mt-1">{feature.previewPrompt}</p>
                       </div>
 
-                      <div
-                        className={`rounded-lg border p-4 text-sm ${
-                          index % 2 === 1
-                            ? 'border-neutral-800 bg-neutral-900/70 text-neutral-200'
-                            : 'border-neutral-200 bg-white text-neutral-800'
-                        }`}
-                      >
-                        <p
-                          className={`font-display text-xs font-semibold ${
-                            index % 2 === 1 ? 'text-white' : 'text-neutral-950'
-                          }`}
-                        >
+                      <div className="rounded-lg border border-[#292B30] bg-[#111318] p-4 text-sm text-[#F5F5F5]">
+                        <p className="font-display text-xs font-semibold text-[#C69A52]">
                           {feature.previewResponseTitle}
                         </p>
-                        <ul className="mt-2.5 space-y-2 text-xs leading-relaxed">
+                        <ul className="mt-2.5 space-y-2 text-xs leading-relaxed text-[#A4A6AD]">
                           {feature.previewResponseLines.map((line) => (
                             <li key={line}>{line}</li>
                           ))}

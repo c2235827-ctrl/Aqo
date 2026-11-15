@@ -31,19 +31,19 @@ function ScrollHandler() {
 
 function NotFoundPage() {
   return (
-    <section className="bg-white py-24 sm:py-32">
+    <section className="bg-[#08090B] py-24 sm:py-32">
       <div className="mx-auto max-w-2xl px-6 text-center">
-        <p className="font-mono text-xs text-neutral-500">404</p>
-        <h1 className="mt-3 font-display text-3xl font-bold tracking-tight text-neutral-950 sm:text-4xl">
+        <p className="font-mono text-xs text-[#C69A52]">404</p>
+        <h1 className="mt-3 font-display text-3xl font-bold tracking-tight text-[#F5F5F5] sm:text-4xl">
           Page Not Found
         </h1>
-        <p className="mt-4 text-base text-neutral-600">
+        <p className="mt-4 text-base text-[#A4A6AD]">
           The page you requested is unavailable or has moved.
         </p>
         <div className="mt-8">
           <Link
             to="/"
-            className="inline-flex min-h-[44px] items-center justify-center rounded-lg bg-neutral-950 px-6 py-3 text-sm font-medium text-white transition-colors hover:bg-neutral-800"
+            className="inline-flex min-h-[44px] items-center justify-center rounded-lg bg-[#C69A52] px-6 py-3 text-sm font-semibold text-[#08090B] transition-colors hover:bg-[#d5aa64]"
           >
             Return to Homepage
           </Link>
@@ -57,7 +57,7 @@ export default function App() {
   return (
     <BrowserRouter>
       <ScrollHandler />
-      <div className="flex min-h-screen flex-col bg-white text-neutral-950">
+      <div className="flex min-h-screen flex-col bg-[#08090B] text-[#F5F5F5]">
         <Navbar />
         <main className="flex-1">
           <Routes>

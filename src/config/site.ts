@@ -37,7 +37,13 @@ export const SITE_CONFIG = {
       },
     ],
   },
-  navigation: [
+  centerNavigation: [
+    { label: 'Features', to: '/features' },
+    { label: 'How It Works', to: '/#how-it-works', sectionId: 'how-it-works' },
+    { label: 'About', to: '/about' },
+    { label: 'Pricing', to: '/pricing' },
+  ] as NavItem[],
+  mobileNavigation: [
     { label: 'Home', to: '/' },
     { label: 'Features', to: '/features' },
     { label: 'How It Works', to: '/#how-it-works', sectionId: 'how-it-works' },

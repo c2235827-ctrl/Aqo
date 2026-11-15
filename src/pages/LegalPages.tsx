@@ -54,40 +54,40 @@ function LegalDocumentLayout({
   sections: { heading: string; body: string[] }[];
 }) {
   return (
-    <section className="bg-white py-16 sm:py-24">
+    <section className="bg-[#08090B] py-16 sm:py-24">
       <div className="mx-auto max-w-3xl px-6">
-        <p className="text-xs font-medium text-neutral-500">
+        <p className="font-mono text-xs font-medium text-[#C69A52]">
           <span>{SITE_CONFIG.brandName}</span>
-          <span aria-hidden="true" className="mx-2">
+          <span aria-hidden="true" className="mx-2 text-[#A4A6AD]">
             ·
           </span>
           <span>{SITE_CONFIG.parentCompany}</span>
-          <span aria-hidden="true" className="mx-2">
+          <span aria-hidden="true" className="mx-2 text-[#A4A6AD]">
             ·
           </span>
-          <span>{lastReviewed}</span>
+          <span className="text-[#A4A6AD]">{lastReviewed}</span>
         </p>
 
-        <h1 className="mt-4 font-display text-4xl font-bold tracking-tight text-neutral-950">
+        <h1 className="mt-4 font-display text-4xl font-bold tracking-tight text-[#F5F5F5]">
           {title}
         </h1>
 
         <div
           role="note"
-          className="mt-6 rounded-xl border border-neutral-200 bg-neutral-50 p-4 text-sm leading-relaxed text-neutral-700"
+          className="mt-6 rounded-xl border border-[#C69A52]/35 bg-[#17191F] p-4 text-sm leading-relaxed text-[#A4A6AD]"
         >
           {statusNote}
         </div>
 
-        <div className="mt-10 space-y-10 border-t border-neutral-200 pt-10">
+        <div className="mt-10 space-y-10 border-t border-[#292B30] pt-10">
           {sections.map((section) => (
             <div key={section.heading}>
-              <h2 className="font-display text-xl font-semibold text-neutral-950">
+              <h2 className="font-display text-xl font-semibold text-[#F5F5F5]">
                 {section.heading}
               </h2>
               <div className="mt-3 space-y-3">
                 {section.body.map((paragraph) => (
-                  <p key={paragraph} className="text-base leading-relaxed text-neutral-600">
+                  <p key={paragraph} className="text-base leading-relaxed text-[#A4A6AD]">
                     {paragraph}
                   </p>
                 ))}

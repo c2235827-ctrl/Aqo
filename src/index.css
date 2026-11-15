@@ -2,13 +2,16 @@
 
 @theme {
   --font-display: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
-  --font-sans: "DM Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-sans: "Manrope", ui-sans-serif, system-ui, sans-serif;
   --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
 }
 
 @layer base {
   html {
+    color-scheme: dark;
     font-family: var(--font-sans);
+    background-color: #08090B;
+    color: #F5F5F5;
     scroll-behavior: smooth;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -17,12 +20,46 @@
   h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-display);
     text-wrap: balance;
+    letter-spacing: -0.02em;
   }
+}
+
+.bg-dot-grid {
+  background-image: radial-gradient(rgba(245, 245, 245, 0.08) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+.bg-hero-glow {
+  background:
+    radial-gradient(ellipse 68% 58% at 14% 8%, rgba(198, 154, 82, 0.16) 0%, rgba(140, 102, 56, 0.06) 42%, transparent 74%),
+    radial-gradient(ellipse 50% 45% at 82% 24%, rgba(198, 154, 82, 0.07) 0%, transparent 70%),
+    #08090B;
+}
+
+.bg-gold-ambient {
+  background:
+    radial-gradient(ellipse 55% 60% at 50% 0%, rgba(198, 154, 82, 0.11) 0%, rgba(140, 102, 56, 0.04) 45%, transparent 75%);
+}
+
+@keyframes floatSlow {
+  0%, 100% {
+    transform: translate3d(0, 0, 0);
+  }
+  50% {
+    transform: translate3d(0, -8px, 0);
+  }
+}
+
+.animate-float-slow {
+  animation: floatSlow 8s ease-in-out infinite;
 }
 
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
+  }
+  .animate-float-slow {
+    animation: none;
   }
   *,
   *::before,
