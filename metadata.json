@@ -1,0 +1,6 @@
+{
+  "name": "Aqoriel",
+  "description": "Discover Aqoriel, an AI-powered academic assistant for lecture notes, research, learning, document understanding, and exam preparation by TerraNova Systems Ltd.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
